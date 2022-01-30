@@ -184,7 +184,7 @@ function items:CreateLabel(name)
     Section.Parent = Container
     Section.BackgroundColor3 = Color3.fromRGB(57, 57, 57)
     Section.BorderSizePixel = 0
-    Section.Position = UDim2.new(0, 0, 0.151658773, 0)
+    Section.Position = UDim2.new(-0.01, 0, 0, 0)
     Section.Size = UDim2.new(0, 485,0, 27)
     Section.Font = Enum.Font.GothamSemibold
     Section.Text = name
