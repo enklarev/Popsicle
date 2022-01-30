@@ -114,8 +114,9 @@ UserInputService.InputBegan:Connect(function(KeyCode)
 
 local tablib = {}
 
-function tablib:AddTab(name)
+function tablib:AddTab(name, sectionname)
     local NewTab = Instance.new("TextButton")
+        local Section = Instance.new("TextLabel")
     
     
     
@@ -132,6 +133,17 @@ Container.BorderSizePixel = 0
 Container.Position = UDim2.new(0.0156862754, 0, 0.09375, 0)
 Container.Size = UDim2.new(0, 494,0, 460)
 Container.Visible = false
+
+Section.Name = "Section"
+    Section.Parent = Container
+    Section.BackgroundColor3 = Color3.fromRGB(57, 57, 57)
+    Section.BorderSizePixel = 0
+    Section.Position = UDim2.new(-0.01, 0, 0, 0)
+    Section.Size = UDim2.new(0, 485,0, 27)
+    Section.Font = Enum.Font.GothamSemibold
+    Section.Text = sectionname
+    Section.TextColor3 = Color3.fromRGB(255, 255, 255)
+    Section.TextSize = 14.000
 
     UIListLayout_2.Parent = Container
 UIListLayout_2.SortOrder = Enum.SortOrder.LayoutOrder
