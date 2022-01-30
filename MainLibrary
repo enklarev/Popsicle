@@ -8,17 +8,16 @@ local PositionOpened = UDim2.new(0.305, 0,-1, 0)
 
 if not _G.Settings then
 	_G.Settings = {
-		['Name'] = 'Popsicle',
 		['Keybind'] = 'RightAlt',
         ['Color'] = Color3.fromRGB(255,0,0)
 	}
 end
 
-function library:CreateWindow()
+function library:CreateWindow(name)
 
 
     for i,v in pairs(game.Players.LocalPlayer:WaitForChild("PlayerGui"):GetChildren()) do
-        if v:IsA("ScreenGui") and v.Name == _G.Settings['Name'] then
+        if v:IsA("ScreenGui") and v.Name == name then
             v:Destroy()
         end
     end
@@ -35,7 +34,7 @@ local UIPadding = Instance.new("UIPadding")
 local UICorner = Instance.new("UICorner")
 local UIListLayout = Instance.new("UIListLayout")
 
-ScreenGui.Name = _G.Settings['Name']
+ScreenGui.Name = name
 ScreenGui.Parent = game.Players.LocalPlayer:WaitForChild("PlayerGui")
 ScreenGui.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
 
@@ -59,7 +58,7 @@ TextLabel.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
 TextLabel.BackgroundTransparency = 1.000
 TextLabel.Size = UDim2.new(0, 128, 0, 21)
 TextLabel.Font = Enum.Font.GothamSemibold
-TextLabel.Text = _G.Settings['Name']
+TextLabel.Text = name
 TextLabel.TextColor3 = Color3.fromRGB(255, 255, 255)
 TextLabel.TextSize = 20.000
 TextLabel.Position = UDim2.new(0.0, 0,0.013, 0) 
