@@ -117,6 +117,13 @@ local tablib = {}
 function tablib:AddTab(name)
     local NewTab = Instance.new("TextButton")
     
+    
+    
+        local UIListLayout_2 = Instance.new("UIListLayout")
+    local UIPadding_2 = Instance.new("UIPadding")
+
+
+
     local Container = Instance.new("Frame")
     Container.Name = name.."Container"
 Container.Parent = Containers
@@ -125,6 +132,14 @@ Container.BorderSizePixel = 0
 Container.Position = UDim2.new(0.0156862754, 0, 0.09375, 0)
 Container.Size = UDim2.new(0, 494,0, 460)
 Container.Visible = false
+
+    UIListLayout_2.Parent = Container
+UIListLayout_2.SortOrder = Enum.SortOrder.LayoutOrder
+UIListLayout_2.Padding = UDim.new(0, 5)
+
+UIPadding_2.Parent = Container
+UIPadding_2.PaddingLeft = UDim.new(0, 5)
+UIPadding_2.PaddingTop = UDim.new(0, 5)
 
 NewTab.Name = name.."   Tab"
 NewTab.Parent = TabsContainer
@@ -152,16 +167,7 @@ local items = {}
 function items:CreateButton(name, callback)
 
     local Button = Instance.new("TextButton")
-    local UIListLayout_2 = Instance.new("UIListLayout")
-    local UIPadding_2 = Instance.new("UIPadding")
 
-    UIListLayout_2.Parent = Container
-UIListLayout_2.SortOrder = Enum.SortOrder.LayoutOrder
-UIListLayout_2.Padding = UDim.new(0, 5)
-
-UIPadding_2.Parent = Container
-UIPadding_2.PaddingLeft = UDim.new(0, 5)
-UIPadding_2.PaddingTop = UDim.new(0, 5)
 
 
     Button.Name = "Button"
